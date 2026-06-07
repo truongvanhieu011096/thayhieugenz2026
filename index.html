@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thầy Hiếu Gen Z | Quản Lý Lớp Học V2.0</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="dashboard.css">
+
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root { --gold: #e6c067; --white: #ffffff; --text-light: #ffffff; }
+
+        body {
+            height: 100vh; overflow: hidden; font-family: 'Quicksand', sans-serif;
+            background: linear-gradient(rgba(8, 15, 25, 0.75), rgba(8, 15, 25, 0.75)), 
+                        url("../LOPVANTHAYHIEU.V2/assets/background/thuvien.jpg") no-repeat center center;
+            background-size: cover;
+        }
+
+        #particles { position: fixed; inset: 0; overflow: hidden; pointer-events: none; z-index: -1; }
+        .particle { position: absolute; border-radius: 50%; background: rgba(255, 255, 255, 0.3); animation: floatParticle linear infinite; }
+        @keyframes floatParticle { from { transform: translateY(110vh); } to { transform: translateY(-20vh); } }
+
+        #loginPage { position: relative; z-index: 1; width: 100%; height: 100vh; display: flex; justify-content: center; align-items: center; padding: 20px; }
+        .container { width: 92%; max-width: 1400px; display: flex; justify-content: space-between; align-items: center; gap: 80px; }
+        .left-side { flex: 1.4; color: white; text-align: center; }
+        .title-main { font-family: 'Cormorant Garamond', serif; font-size: 6.5rem; font-weight: 400; letter-spacing: 14px; }
+        .title-sub { font-family: 'Cormorant Garamond', serif; font-size: 10rem; font-weight: 700; line-height: .9; background: linear-gradient(90deg, #fff7d6, #e6c067, #ffffff, #e6c067); background-size: 300%; -webkit-background-clip: text; -webkit-text-fill-color: transparent; animation: shine 10s linear infinite; }
+        @keyframes shine { from { background-position: 0%; } to { background-position: 300%; } }
+        .divider { width: 100%; max-width: 420px; height: 2px; margin: 25px auto; background: rgba(255, 255, 255, .25); }
+        .divider.small { max-width: 260px; }
+        .school-name { font-size: 1.15rem; letter-spacing: 5px; font-weight: 600; text-transform: uppercase; text-shadow: 0 0 15px rgba(255, 255, 255, .2); }
+        .slogan { max-width: 650px; margin: auto; font-size: 1.3rem; line-height: 1.8; color: rgba(255, 255, 255, .9); }
+        .quote { margin-top: 35px; font-size: 1.15rem; font-style: italic; color: var(--gold); opacity: .9; }
+        .footer-brand { margin-top: 50px; color: var(--gold); letter-spacing: 3px; font-size: 0.9rem; }
+        .right-side { width: 430px; flex-shrink: 0; position: relative; z-index: 10; }
+        .login-card { padding: 45px; border-radius: 35px; background: rgba(255, 255, 255, 0.25); backdrop-filter: blur(25px); -webkit-backdrop-filter: blur(25px); border: 1px solid rgba(255, 255, 255, 0.3); box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25); }
+        .login-card h3 { color: var(--text-light); margin-bottom: 30px; text-align: center; font-size: 1.6rem; font-weight: 600; letter-spacing: 1px; }
+        .login-card input { width: 100%; padding: 16px 20px; border: 1px solid rgba(255, 255, 255, 0.25); border-radius: 16px; margin-bottom: 18px; outline: none; background: rgba(255, 255, 255, 0.08); color: var(--text-light); font-family: 'Quicksand', sans-serif; font-size: 1rem; transition: all .3s ease; }
+        .login-card input::placeholder { color: rgba(255, 255, 255, 0.55); }
+        .login-card input:focus { border-color: var(--gold); background: rgba(255, 255, 255, 0.18); box-shadow: 0 0 12px rgba(230, 192, 103, 0.3); }
+        .login-card button { width: 100%; padding: 16px; border: none; border-radius: 16px; background: var(--gold); color: #080f19; cursor: pointer; font-family: 'Quicksand', sans-serif; font-weight: 700; font-size: 1rem; letter-spacing: 1px; transition: all .3s cubic-bezier(0.4, 0, 0.2, 1); box-shadow: 0 4px 15px rgba(230, 192, 103, 0.3); position: relative; z-index: 20; }
+        .login-card button:hover { transform: translateY(-3px); box-shadow: 0 8px 25px rgba(230, 192, 103, 0.5); background: #f0ce7d; }
+        .credit { margin-top: 25px; text-align: center; color: rgba(255, 255, 255, 0.6); font-size: 13px; letter-spacing: 0.5px; }
+
+        @media (max-width: 1100px) { .container { flex-direction: column; gap: 50px; justify-content: center; } .title-main { font-size: 4.5rem; } .title-sub { font-size: 7rem; } .right-side { width: 100%; max-width: 430px; } }
+    </style>
+</head>
+<body>
+
+    <div id="particles"></div>
+
+    <section id="loginPage">
+        <div class="container">
+            <div class="left-side">
+                <div class="brand">
+                    <h1 class="title-main">Thầy Hiếu</h1>
+                    <h2 class="title-sub">Gen Z</h2>
+                </div>
+                <div class="divider"></div>
+                <div class="school-name">LỚP VĂN THẦY HIẾU • HỌC ĐỂ HẠNH PHÚC</div>
+                <div class="divider small"></div>
+                <div class="slogan">Kiến tạo không gian học tập tương tác bằng giải pháp công nghệ hiện đại.</div>
+                <div id="quoteBox" class="quote">"Mỗi học sinh là một câu chuyện đang được viết tiếp."</div>
+                <div class="footer-brand">Since 2025 • Version 2.0.0</div>
+            </div>
+            <div class="right-side">
+                <form class="login-card" id="loginForm" action="javascript:void(0);" onsubmit="login();">
+                    <h3>Đăng nhập hệ thống</h3>
+                    <input type="text" id="username" placeholder="Tên đăng nhập" required autocomplete="username">
+                    <input type="password" id="password" placeholder="Mật khẩu" required autocomplete="current-password">
+                    <button type="submit">VÀO HỆ THỐNG QUẢN LÝ</button>
+                    <div class="credit">Designed by #thayHieuGenZ</div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+   <section id="dashboardPage" style="display: none; opacity: 0; transition: opacity 0.5s ease;">
+        <div class="dashboard-wrapper">
+            <div class="sidebar">
+                <div class="sidebar-brand">
+                    <i class="fa-solid fa-feather-pointed"></i>
+                    <span>Thầy Hiếu Gen Z</span>
+                </div>
+                <nav class="sidebar-menu">
+                    <div class="menu-item active" onclick="switchTab('bo-mon', this)">
+                        <i class="fa-solid fa-book-bookmark"></i>
+                        <span>Lớp Bộ Môn</span>
+                    </div>
+                    <div class="menu-item" onclick="switchTab('thong-ke', this)">
+                        <i class="fa-solid fa-chart-line"></i>
+                        <span>Thống Kê</span>
+                    </div>
+                    <div class="menu-item" onclick="switchTab('cai-dat', this)">
+                        <i class="fa-solid fa-gear"></i>
+                        <span>Cài Đặt</span>
+                    </div>
+                </nav>
+                <button class="btn-logout" onclick="logout()">
+                    <i class="fa-solid fa-right-from-bracket"></i> Đăng Xuất
+                </button>
+            </div>
+
+            <div class="main-content">
+                <div id="content-dynamic">
+                    <h1 class="welcome-msg">Chào mừng thầy Hiếu quay trở lại!</h1>
+                    <p>Hãy chọn một mục ở menu bên trái để bắt đầu làm việc.</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="importModal" class="modal-overlay" style="display:none">
+            <div class="modal-content">
+                <h3><i class="fa-solid fa-file-import"></i> Dán Danh Sách (Excel)</h3>
+                <textarea id="excelInput" placeholder="Dán nội dung tại đây..."></textarea>
+                <div class="modal-actions">
+                    <button class="btn-save" onclick="processData()">Lưu Dữ Liệu</button>
+                    <button class="btn-close" onclick="toggleModal(false)">Đóng</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="fixed-copyright">
+        &copy; 2026 Thầy Hiếu Gen Z
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => { initRandomQuote(); createParticles(); });
+        function initRandomQuote() {
+            const quotes = ["Mỗi học sinh là một câu chuyện đang được viết tiếp.", "Từ trang sách đến cuộc đời.", "Giáo dục là nghệ thuật đánh thức tiềm năng.", "Người thầy gieo hạt, thời gian sẽ nở hoa.", "Mỗi ngày đến trường là một ngày hạnh phúc."];
+            const quoteBox = document.getElementById("quoteBox");
+            if (quoteBox) { quoteBox.innerText = `"${quotes[Math.floor(Math.random() * quotes.length)]}"`; }
+        }
+        function createParticles() {
+            const container = document.getElementById("particles"); if (!container) return;
+            for (let i = 0; i < 60; i++) {
+                const p = document.createElement("div"); p.classList.add("particle");
+                const s = Math.random() * 4 + 2; p.style.width = `${s}px`; p.style.height = `${s}px`;
+                p.style.left = `${Math.random() * 100}%`; p.style.animationDuration = `${Math.random() * 20 + 15}s`; p.style.animationDelay = `${Math.random() * 10}s`;
+                container.appendChild(p);
+            }
+        }
+        function login() {
+            const u = document.getElementById("username").value.trim();
+            const p = document.getElementById("password").value;
+            if (u === "admin" && p === "123456") {
+                document.getElementById("loginPage").style.opacity = "0";
+                setTimeout(() => {
+                    document.getElementById("loginPage").style.display = "none";
+                    const d = document.getElementById("dashboardPage");
+                    d.style.display = "block"; setTimeout(() => d.style.opacity = "1", 50);
+                }, 500);
+            } else { alert("Tài khoản hoặc mật khẩu không chính xác."); }
+        }
+    </script>
+    <script src="dashboard.js"></script>
+</body>
+</html>
