@@ -94,18 +94,42 @@
                     <span>Thầy Hiếu Gen Z</span>
                 </div>
                 <nav class="sidebar-menu">
-                    <div class="menu-item active" onclick="switchTab('bo-mon', this)">
-                        <i class="fa-solid fa-book-bookmark"></i>
-                        <span>Lớp Bộ Môn</span>
-                    </div>
-                    <div class="menu-item" onclick="switchTab('thong-ke', this)">
-                        <i class="fa-solid fa-chart-line"></i>
-                        <span>Thống Kê</span>
-                    </div>
-                    <div class="menu-item" onclick="switchTab('cai-dat', this)">
-                        <i class="fa-solid fa-gear"></i>
-                        <span>Cài Đặt</span>
-                    </div>
+                    <nav class="sidebar-menu">
+    <div class="menu-item active" onclick="switchTab('tong-quan', this)">
+        <i class="fa-solid fa-chart-pie"></i>
+        <span>Tổng quan</span>
+    </div>
+
+    <div class="menu-item" onclick="switchTab('lop-chu-nhiem', this)">
+        <i class="fa-solid fa-user-graduate"></i>
+        <span>Lớp chủ nhiệm</span>
+    </div>
+
+    <div class="menu-item" onclick="switchTab('bo-mon', this)">
+        <i class="fa-solid fa-book-bookmark"></i>
+        <span>Lớp bộ môn</span>
+    </div>
+
+    <div class="menu-item" onclick="switchTab('khoanh-khac', this)">
+        <i class="fa-solid fa-camera-retro"></i>
+        <span>Khoảnh khắc đáng nhớ</span>
+    </div>
+
+    <div class="menu-item" onclick="switchTab('tai-lieu', this)">
+        <i class="fa-solid fa-folder-open"></i>
+        <span>Tài liệu</span>
+    </div>
+
+    <div class="menu-item" onclick="switchTab('tro-choi', this)">
+        <i class="fa-solid fa-gamepad"></i>
+        <span>Trò chơi dạy học</span>
+    </div>
+
+    <div class="menu-item" onclick="switchTab('cai-dat', this)">
+        <i class="fa-solid fa-gear"></i>
+        <span>Cài đặt</span>
+    </div>
+</nav>
                 </nav>
                 <button class="btn-logout" onclick="logout()">
                     <i class="fa-solid fa-right-from-bracket"></i> Đăng Xuất
@@ -155,7 +179,7 @@
         function login() {
             const u = document.getElementById("username").value.trim();
             const p = document.getElementById("password").value;
-            if (u === "thayHieuGenZ" && p === "Quochieu110@") {
+            if (u === "a" && p === "111") {
                 document.getElementById("loginPage").style.opacity = "0";
                 setTimeout(() => {
                     document.getElementById("loginPage").style.display = "none";
