@@ -18,11 +18,14 @@
         :root { --gold: #e6c067; --white: #ffffff; --text-light: #ffffff; }
 
         body {
-            height: 100vh; overflow: hidden; font-family: 'Quicksand', sans-serif;
-            background: linear-gradient(rgba(8, 15, 25, 0.75), rgba(8, 15, 25, 0.75)), 
-                        url("../assets/background/thuvien.jpg") no-repeat center center;
-            background-size: cover;
-        }
+    min-height: 100vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+    font-family: 'Quicksand', sans-serif;
+    background: linear-gradient(rgba(8, 15, 25, 0.75), rgba(8, 15, 25, 0.75)),
+                url("../assets/background/thuvien.jpg") no-repeat center center;
+    background-size: cover;
+}
 
         #particles { position: fixed; inset: 0; overflow: hidden; pointer-events: none; z-index: -1; }
         .particle { position: absolute; border-radius: 50%; background: rgba(255, 255, 255, 0.3); animation: floatParticle linear infinite; }
@@ -152,7 +155,7 @@
         function login() {
             const u = document.getElementById("username").value.trim();
             const p = document.getElementById("password").value;
-            if (u === "admin" && p === "123456") {
+            if (u === "thayHieuGenZ" && p === "Quochieu110@") {
                 document.getElementById("loginPage").style.opacity = "0";
                 setTimeout(() => {
                     document.getElementById("loginPage").style.display = "none";
