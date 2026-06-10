@@ -56,3 +56,23 @@ function processData() {
     });
     saveDB(); toggleModal(false); renderTable();
 }
+function logout() {
+    const d = document.getElementById('dashboardPage');
+    d.style.opacity = "0";
+
+    setTimeout(() => {
+        d.style.display = "none";
+
+        document.querySelectorAll('.menu-item').forEach(m => m.classList.remove('active'));
+
+        const login = document.getElementById('loginPage');
+        login.style.display = "flex";
+
+        setTimeout(() => {
+            login.style.opacity = "1";
+        }, 50);
+
+        document.getElementById('loginForm').reset();
+
+    }, 300);
+}
